@@ -1,10 +1,11 @@
+import { SignInOutFormLayoutComponent } from './layouts/sign-in-out-form-layout/sign-in-out-form-layout.component';
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 // Layouts
-import { MainLayoutComponent } from './layouts/main-layout.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +14,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 // Services
 
@@ -23,6 +26,9 @@ import { MainFooterComponent } from './components/main-footer/main-footer.compon
     MainLayoutComponent,
     MainNavbarComponent,
     MainFooterComponent,
+    SignInComponent,
+    SignUpComponent,
+    SignInOutFormLayoutComponent
   ],
   imports: [
     BrowserModule,
