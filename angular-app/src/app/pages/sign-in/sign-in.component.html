@@ -1,5 +1,43 @@
 <app-sign-in-out-form-layout>
-  <form form>
-    <h1>Formulario</h1>
-  </form>
+  <div form class="form">
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Monitoring Financial</h1>
+    </div>
+    <div class="card mb-2">
+      <div class="card-body">
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+          <div class="form-label-group mb-3">
+            <label class="font-weight-normal" for="email">Email</label>
+            <input
+              id="email"
+              class="form-control"
+              type="email"
+              required
+              autofocus
+            />
+          </div>
+          <div class="form-label-group mb-3">
+            <label class="font-weight-normal" for="password">Password</label>
+            <input
+              id="password"
+              class="form-control"
+              type="password"
+              required
+            />
+          </div>
+          <button class="btn btn-block btn-primary" type="submit">
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body text-center">
+        <span>
+          ¿No tienes cuenta? Registrate <a routerLink="/sign-up">aquí</a>
+        </span>
+      </div>
+    </div>
+    <p class="mt-5 mb-3 text-muted text-center">© Roberto González-2019</p>
+  </div>
 </app-sign-in-out-form-layout>

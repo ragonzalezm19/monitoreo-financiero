@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -6,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  constructor() { }
+  signInForm: FormGroup;
 
-  ngOnInit(): void { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+  ) { }
+
+  ngOnInit(): void {
+    this.signInForm = this.fb.group({});
+  }
+
+  onSubmit(): void {
+    this.router.navigate(['/']);
+  }
 }

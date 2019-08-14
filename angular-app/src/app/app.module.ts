@@ -1,11 +1,12 @@
-import { SignInOutFormLayoutComponent } from './layouts/sign-in-out-form-layout/sign-in-out-form-layout.component';
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // Layouts
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { SignInOutFormLayoutComponent } from './layouts/sign-in-out-form-layout/sign-in-out-form-layout.component';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
@@ -32,7 +33,9 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

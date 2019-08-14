@@ -1,3 +1,53 @@
 <app-sign-in-out-form-layout>
-  <h1 form>Formulario</h1>
+  <div form class="form">
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Monitoring Financial</h1>
+    </div>
+    <div class="card mb-2">
+      <div class="card-body">
+        <form>
+          <div class="form-label-group mb-3">
+            <label for="email" class="font-weight-normal">Email</label>
+            <input
+              id="email"
+              class="form-control"
+              type="email"
+              required
+              autofocus
+            />
+          </div>
+          <div class="form-label-group mb-3">
+            <label for="password" class="font-weight-normal">Password</label>
+            <input
+              id="password"
+              class="form-control"
+              type="password"
+              required
+            />
+          </div>
+
+          <div class="form-label-group mb-3">
+            <label for="passwordConfirm" class="font-weight-normal"
+              >Confirm Password</label
+            >
+            <input
+              id="passwordConfirm"
+              class="form-control"
+              type="password"
+              required
+            />
+          </div>
+          <button class="btn btn-block btn-primary" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body text-center">
+        <p>¿Ya tienes cuenta? Ingresa <a routerLink="/sign-in">aquí</a></p>
+      </div>
+    </div>
+    <p class="mt-5 mb-3 text-muted text-center">© Roberto González-2019</p>
+  </div>
 </app-sign-in-out-form-layout>
