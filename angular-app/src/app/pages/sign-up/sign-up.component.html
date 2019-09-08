@@ -5,16 +5,19 @@
     </div>
     <div class="card mb-2">
       <div class="card-body">
-        <form>
+        <form [formGroup]="singForm" (submit)="onSubmit()">
           <div class="form-label-group mb-3">
             <label for="email" class="font-weight-normal">Email</label>
             <input
               id="email"
               class="form-control"
               type="email"
-              required
-              autofocus
+              formControlName="email"
+              [ngClass]="getClassInput(singForm.get('email'))"
             />
+            <div class="invalid-feedback" *ngIf="singForm.get('email').invalid && (singForm.get('email').dirty || singForm.get('email').touched)">
+              {{ getErrorMesssage('email', singForm.get('email')) }}
+            </div>
           </div>
           <div class="form-label-group mb-3">
             <label for="password" class="font-weight-normal">Password</label>
@@ -22,8 +25,12 @@
               id="password"
               class="form-control"
               type="password"
-              required
+              formControlName="password"
+              [ngClass]="getClassInput(singForm.get('password'))"
             />
+            <div class="invalid-feedback" *ngIf="singForm.get('password').invalid && (singForm.get('password').dirty || singForm.get('password').touched)">
+              {{ getErrorMesssage('password', singForm.get('password')) }}
+            </div>
           </div>
 
           <div class="form-label-group mb-3">
@@ -34,10 +41,14 @@
               id="passwordConfirm"
               class="form-control"
               type="password"
-              required
+              formControlName="confirm-password"
+              [ngClass]="getClassInput(singForm.get('confirm-password'))"
             />
+            <div class="invalid-feedback" *ngIf="singForm.get('confirm-password').invalid && (singForm.get('confirm-password').dirty || singForm.get('confirm-password').touched)">
+              {{ getErrorMesssage('confirm-password', singForm.get('confirm-password')) }}
+            </div>
           </div>
-          <button class="btn btn-block btn-primary" type="submit">
+          <button class="btn btn-block btn-primary" type="submit" [disabled]="!singForm.valid">
             Sign Up
           </button>
         </form>

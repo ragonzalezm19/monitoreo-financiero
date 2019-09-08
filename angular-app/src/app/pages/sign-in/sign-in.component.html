@@ -12,9 +12,12 @@
               id="email"
               class="form-control"
               type="email"
-              required
-              autofocus
+              formControlName="email"
+              [ngClass]="getClassInput(signInForm.get('email'))"
             />
+            <div class="invalid-feedback" *ngIf="signInForm.get('email').invalid && (signInForm.get('email').dirty || signInForm.get('email').touched)">
+              {{ getErrorMessage('email', signInForm.get('email')) }}
+            </div>
           </div>
           <div class="form-label-group mb-3">
             <label class="font-weight-normal" for="password">Password</label>
@@ -22,10 +25,11 @@
               id="password"
               class="form-control"
               type="password"
-              required
+              formControlName="password"
+              [ngClass]="getClassInput(signInForm.get('password'))"
             />
           </div>
-          <button class="btn btn-block btn-primary" type="submit">
+          <button class="btn btn-block btn-primary" type="submit" [disabled]="!signInForm.valid">
             Sign In
           </button>
         </form>
